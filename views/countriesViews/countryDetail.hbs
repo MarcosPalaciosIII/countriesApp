@@ -1,0 +1,53 @@
+<div class="centerContent">
+
+  <div class="centerContent">
+    <h2>{{oneCountry.name}} ({{oneCountry.alpha3Code}})</h2>
+    <img class="flagImage" src="{{oneCountry.flag}}" />
+    <h3>Region: {{oneCountry.region}}</h3>
+    <h3>Sub Region: {{oneCountry.subregion}}</h3>
+    <h3>Population: {{oneCountry.population}}</h3>
+  </div>
+
+  <div class="countryDetailBody">
+    <div class="centerContent">
+      <h3>Capital: {{oneCountry.capital}}</h3>
+      <h3>Native Name: {{oneCountry.nativeName}}</h3>
+      <h3>Lat: {{oneCountry.latlng.[0]}}, Long: {{oneCountry.latlng.[1]}}</h3>
+      <h3><b><u>TimeZones</u></b></h3>
+      <ul>
+        {{#each oneCountry.timezones}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div>
+      <h3><b><u>Bordering Countries</u></b></h3>
+      {{#if oneCountry.borders}}
+      <ul>
+        {{#each oneCountry.borders}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{else}}
+      <h3>No Other Countries on Border</h3>
+      {{/if}}
+    </div>
+    <div>
+      <h3><b><u>Languages</u></b></h3>
+      <ul>
+        {{#each oneCountry.languages}}
+          <li>{{this.name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div>
+      <h3><b><u>Currencies</u></b></h3>
+      <ul>
+        {{#each oneCountry.currencies}}
+        <li>{{this.name}} ({{this.symbol}} {{this.code}})</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+</div>
