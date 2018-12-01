@@ -3,7 +3,7 @@
   {{#each countries}}
   <div class="countryInfo">
     <h2>{{this.name}} ({{this.alpha3Code}})</h2>
-    <a href="/countries/countryDetails/{{this.alpha3Code}}"><img src="{{this.flag}}" /></a>
+    <a class="countryLink" href="/countries/countryDetails/{{this.alpha3Code}}"><img src="{{this.flag}}" /></a>
     <h3>Region: {{this.region}}</h3>
     <h3>Population: {{this.population}}</h3>
   </div>

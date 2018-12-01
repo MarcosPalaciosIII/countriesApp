@@ -11,7 +11,7 @@
 
   <nav>
     <a href="/">Home</a>
-    <a href="/countries/countriesList">List of Countries</a>
+    <a class="countryLink" href="/countries/countriesList">List of Countries</a>
     <a href="/auth/login">Login</a>
     <a href="/auth/signup">Signup</a>
     <a href="/auth/logout">Logout</a>
@@ -19,6 +19,15 @@
 
   {{{body}}}
 
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    const theMapApiKey = {{{theMapApiKey}}};
+    // console.log(theMapApiKey);
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>
 </html>
