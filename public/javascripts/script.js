@@ -15,25 +15,28 @@ google.charts.load('current', {
 google.charts.setOnLoadCallback(drawRegionsMap);
 
 function drawRegionsMap() {
-  var data = google.visualization.arrayToDataTable([
-    ['Country', 'Popularity'],
-    ['Russia', 200000],
-    ['Italy', 30000],
-    ['United States', 1000000],
-    ['Iceland', 200],
-    ['India', 850000]
-  ]);
+  var data = google.visualization.arrayToDataTable(
+    countryList
+  );
 
-  var options = {};
+  var options = {
+    region: 'world', // Africa
+    // displayMode: 'text',
+    colorAxis: {minValue: 1000000, maxValue: 500000000, colors: ['#00853f', 'lime', 'yellow', 'orange', '#e31b23']},
+    backgroundColor: '#81d4fa',
+    datalessRegionColor: 'darkgray',
+    defaultColor: '#f5f5f5',
 
-  var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('regions_div', 'geochart-colors'));
 
   chart.draw(data, options);
 }
 
 
 $('.countryLink').on('click', () => {
-  let theArray = $('.countyLink');
+  let theArray = $('.countryLink');
   theCountryArray = theArray;
     console.log("------------------------ ", theArray);
 });

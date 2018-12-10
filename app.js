@@ -61,8 +61,12 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
-app.locals.theMapApiKey = JSON.stringify(process.env.MAPSAPIKEY);
+app.use((req, res, next) => {
+  res.locals.title = 'REST - Countries';
+  res.locals.theMapApiKey = JSON.stringify(process.env.MAPSAPIKEY);
+  res.locals.countryList = JSON.stringify([['Country', 'Popularity']]);
+  next();
+});
 
 // Enable authentication using session + passport
 app.use(session({

@@ -6,8 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="http://www.webglearth.com/v2/api.js"></script>
+  <script>
+    function initialize() {
+      var options = {atmosphere: true, center: [0, 0], zoom: 0};
+      var earth = new WE.map('earth_div', options);
+      // earth.setView([46.8011, 8.2266], 3);
+      WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
+        minZoom: 0,
+        maxZoom: 5,
+        attribution: 'NASA'
+      }).addTo(earth);
+      var before = null;
+      requestAnimationFrame(function animate(now) {
+          var c = earth.getPosition();
+          var elapsed = before? now - before: 0;
+          before = now;
+          earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+          requestAnimationFrame(animate);
+      });
+    }
+  </script>
+  <!-- <script>
+  var earth;
+  function initialize() {
+    earth = new WE.map('earth_div');
+    earth.setView([46.8011, 8.2266], 3);
+    WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(earth);
+
+    // Start a simple rotation animation
+    var before = null;
+    requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        var elapsed = before? now - before: 0;
+        before = now;
+        earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+        requestAnimationFrame(animate);
+    });
+  }
+</script> -->
 </head>
-<body>
+<body onload="initialize()">
 
   <nav>
     <a href="/">Home</a>
@@ -25,6 +66,7 @@
     crossorigin="anonymous"></script>
   <script>
     const theMapApiKey = {{{theMapApiKey}}};
+    var countryList = {{{countryList}}};
     // console.log(theMapApiKey);
   </script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

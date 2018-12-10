@@ -18,10 +18,33 @@ nav {
   height: 8vh;
   width: 100vw;
   padding-left: 4vw;
+  z-index: 1;
 }
 
 nav a {
   margin-left: 1vw;
+}
+
+h1 {
+  color: white;
+  margin: 1vh 0 0 0;
+}
+
+#regions_div {
+  margin-bottom: 2vh;
+  border: 1px solid black;
+}
+
+#earth_div {
+  text-align: center;
+  margin-top: 8vh;
+  height: 92vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  position: absolute !important;
 }
 
 .allTheCountries {
@@ -70,6 +93,6 @@ nav a {
 }
 
 .theMap {
-  width: 900px;
-  height: 600px;
+  width: 75vw;
+  height: 65vh;
 }
