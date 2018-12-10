@@ -28,6 +28,7 @@ nav a {
 h1 {
   color: white;
   margin: 1vh 0 0 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #regions_div {
@@ -45,6 +46,8 @@ h1 {
   left: 0;
   background-color: #000;
   position: absolute !important;
+  background-image: url("../images/stars.jpg");
+  // filter: blue(0.2px);
 }
 
 .allTheCountries {
