@@ -58,7 +58,7 @@ router.get('/countriesList', (req, res, next) => {
       //   oneCountry.name = "South Korea";
       //   break;
       // }
-      countryPopArray.push([oneCountry.alpha2Code, oneCountry.population]);
+      countryPopArray.push([{v: oneCountry.alpha2Code,f: oneCountry.name}, oneCountry.population]);
     });
     console.log("----------------- ", res.locals);
     res.locals.countryList = JSON.stringify(countryPopArray);
