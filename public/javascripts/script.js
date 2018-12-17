@@ -22,11 +22,12 @@ function drawRegionsMap() {
   var options = {
     region: 'world', // Africa
     // displayMode: 'text',
+    // values:[2562, 30000000, 150000000, 350000000, 1377422166],
     colorAxis: {minValue: 1000000, maxValue: 500000000, colors: ['#00853f', 'lime', 'yellow', 'orange', '#e31b23']},
     backgroundColor: '#81d4fa',
     datalessRegionColor: 'darkgray',
     defaultColor: '#f5f5f5',
-
+    legend: 'Population'
   };
 
   var chart = new google.visualization.GeoChart(document.getElementById('regions_div', 'geochart-colors'));

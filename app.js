@@ -64,7 +64,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 app.use((req, res, next) => {
   res.locals.title = 'REST - Countries';
   res.locals.theMapApiKey = JSON.stringify(process.env.MAPSAPIKEY);
-  res.locals.countryList = JSON.stringify([['Country', 'Popularity']]);
+  res.locals.countryList = JSON.stringify([['Country', 'Population']]);
   next();
 });
 
